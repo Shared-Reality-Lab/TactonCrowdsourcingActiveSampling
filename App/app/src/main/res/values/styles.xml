@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_main</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_main</item>
+        <item name="colorAccent">@color/colorAccent_main</item>
+        <item name="android:splitMotionEvents">false</item> <!--These two were added to disable multi-touch on the screen  -->
+        <item name="android:windowEnableSplitTouch">false</item> <!-- https://stackoverflow.com/questions/20971484/how-to-avoid-multiple-button-click-at-same-time-in-android -->
+    </style>
+
+
+
+</resources>

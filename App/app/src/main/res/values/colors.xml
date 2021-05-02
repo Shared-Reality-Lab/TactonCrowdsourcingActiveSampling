@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- For main activity -->
+    <color name="colorPrimary_main">#008577</color>
+    <color name="colorPrimaryDark_main">#00574B</color>
+    <color name="colorAccent_main">#D81B60</color>
+    <color name="colorRed">#D10808</color>
+    <!-- For login activity -->
+    <color name="colorPrimary">#000011</color> <!-- fdjofjd -->
+    <color name="colorPrimaryDark">#000011</color> <!-- color for the upper bar of the phone-->
+    <color name="colorAccent">#3498DB</color> <!-- color for the theme of the bars -->
+</resources>

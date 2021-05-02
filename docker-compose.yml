@@ -1,0 +1,50 @@
+version: '3'
+services:
+  db:
+    build: ./master
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - default
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=haptrix
+      - POSTGRES_PASSWORD=haptrixcim
+      - POSTGRES_DB=haptrix
+      - PG_REP_USER=rep
+      - PG_REP_PASSWORD=hapreppw123
+  db-slave:
+    build: ./slave
+    volumes:
+      - db-data-slave:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=haptrix
+      - POSTGRES_PASSWORD=haptrixcim
+      - POSTGRES_DB=haptrix
+      - PG_REP_USER=rep
+      - PG_REP_PASSWORD=hapreppw123
+    networks:
+      - default
+  haptrix:
+    restart: always
+    build: Server
+    ports:
+      - 5000:5000
+    networks:
+      - default
+    environment:
+      - DB_HOST=db
+      - DB_PASSWORD=haptrixcim
+      - PORT=5000
+      - HOST=0.0.0.0
+      - FLASK_APP=main.py
+
+volumes:
+  db-data:
+    driver: local
+  db-data-slave:
+    driver: local
+
+networks:
+  default:
